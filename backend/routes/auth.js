@@ -13,10 +13,8 @@ router.post('/register', [
     body('email', 'Please include a valid email').isEmail(),
     body('password', 'Password must be at least 6 characters').isLength({ min: 6 })
 ], async (req, res) => {
-    console.log('Register route called with:', req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log('Validation errors:', errors.array());
         return res.status(400).json({ errors: errors.array() });
     }
 
@@ -62,10 +60,8 @@ router.post('/admin/register', [
     body('email', 'Please include a valid email').isEmail(),
     body('mobile', 'Mobile number is optional').optional()
 ], async (req, res) => {
-    console.log('Admin Register route called with:', req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log('Validation errors:', errors.array());
         return res.status(400).json({ errors: errors.array() });
     }
 

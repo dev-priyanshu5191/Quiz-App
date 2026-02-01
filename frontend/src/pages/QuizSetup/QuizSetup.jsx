@@ -64,7 +64,7 @@ const QuizSetup = () => {
             }
         }).then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
-                console.log("I was closed by the timer");
+                // Timer closed automatically
             }
         });
 
@@ -148,91 +148,89 @@ const QuizSetup = () => {
                             max="300"
                             placeholder="30"
                         />
-                        {console.log('Timer field rendering:', formData.timerPerQuestion)}
                     </div> */}
 
                     <div className="form-group">
-                        <select
-                            id="number"
-                            name="number"
-                            value={formData.number}
-                            onChange={onChange}
-                        >
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="category">Category</label>
-                        <select
-                            id="category"
-                            name="category"
-                            value={formData.category}
-                            onChange={onChange}
-                        >
-                            {categories.map(cat => (
-                                <option key={cat.id} value={cat.id}>{cat.name}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="difficulty">Difficulty</label>
-                        <select
-                            id="difficulty"
-                            name="difficulty"
-                            value={formData.difficulty}
-                            onChange={onChange}
-                        >
-                            {difficulties.map(diff => (
-                                <option key={diff.id} value={diff.id}>{diff.name}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="type">Question Type</label>
-                        <select
-                            id="type"
-                            name="type"
-                            value={formData.type}
-                            onChange={onChange}
-                        >
-                            {types.map(type => (
-                                <option key={type.id} value={type.id}>{type.name}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="timerPerQuestion">Time per Question (seconds)</label>
-                        <input
-                            type="number"
-                            id="timerPerQuestion"
-                            name="timerPerQuestion"
-                            value={formData.timerPerQuestion}
-                            onChange={onChange}
-                            min="5"
-                            max="300"
-                            placeholder="30"
-                        />
-                        {console.log('Timer field rendering:', formData.timerPerQuestion)}
-                    </div>
-
-                    <div className="button-group">
-                        <button type="button" onClick={() => navigate('/dashboard')} className="back-btn">
-                            Back to Dashboard
-                        </button>
-                        <button type="submit" className="start-btn" disabled={loading}>
-                            {loading ? 'Loading Questions...' : 'Start Quiz'}
-                        </button>
-                    </div>
-                </form>
+                <select
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={onChange}
+                >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
             </div>
-        </div>
+
+            <div className="form-group">
+                <label htmlFor="category">Category</label>
+                <select
+                    id="category"
+                    name="category"
+                    value={formData.category}
+                    onChange={onChange}
+                >
+                    {categories.map(cat => (
+                        <option key={cat.id} value={cat.id}>{cat.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="difficulty">Difficulty</label>
+                <select
+                    id="difficulty"
+                    name="difficulty"
+                    value={formData.difficulty}
+                    onChange={onChange}
+                >
+                    {difficulties.map(diff => (
+                        <option key={diff.id} value={diff.id}>{diff.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="type">Question Type</label>
+                <select
+                    id="type"
+                    name="type"
+                    value={formData.type}
+                    onChange={onChange}
+                >
+                    {types.map(type => (
+                        <option key={type.id} value={type.id}>{type.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="timerPerQuestion">Time per Question (seconds)</label>
+                <input
+                    type="number"
+                    id="timerPerQuestion"
+                    name="timerPerQuestion"
+                    value={formData.timerPerQuestion}
+                    onChange={onChange}
+                    min="5"
+                    max="300"
+                    placeholder="30"
+                />
+            </div>
+
+            <div className="button-group">
+                <button type="button" onClick={() => navigate('/dashboard')} className="back-btn">
+                    Back to Dashboard
+                </button>
+                <button type="submit" className="start-btn" disabled={loading}>
+                    {loading ? 'Loading Questions...' : 'Start Quiz'}
+                </button>
+            </div>
+        </form>
+            </div >
+        </div >
     );
 };
 

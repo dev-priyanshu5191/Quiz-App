@@ -25,7 +25,6 @@ const Signup = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        console.log('Form submitted!');
         setLoading(true);
 
         if (userType === 'user' && password !== confirmPassword) {
@@ -40,9 +39,6 @@ const Signup = () => {
         }
 
         try {
-            console.log('Making API call to register...');
-            console.log('Data being sent:', userType === 'admin' ? { name } : { name, email, password });
-
             const url = userType === 'admin' ? 'http://localhost:5000/api/auth/admin/register' : 'http://localhost:5000/api/auth/register';
 
             const response = await fetch(url, {
@@ -53,9 +49,7 @@ const Signup = () => {
                 body: JSON.stringify(userType === 'admin' ? { name, email, password, mobile } : { name, email, password, mobile })
             });
 
-            console.log('Response status:', response.status);
             const data = await response.json();
-            console.log('Response data:', data);
 
             if (!response.ok) {
                 throw new Error(data.msg || 'Registration failed');
