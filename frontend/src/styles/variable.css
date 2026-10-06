@@ -1,24 +1,48 @@
 :root {
+  /* Colors */
   --primary: #167d78;
   --primary-dark: #0e5e5b;
+  --primary-soft: #e3f0ee;
   --accent: #f2bd57;
+  --accent-soft: #fdf3dd;
   --ink: #17324d;
-  --background: #f4f0e8;
+  --background: #f6f3ec;
   --surface: #ffffff;
 
-  --text-primary: #334155;
+  --text-primary: #33475b;
   --text-secondary: #64748b;
 
-  --border: #e2e8f0;
+  --border: #e4e0d4;
+  --border-strong: #d5d0c2;
 
   --success: #25855b;
+  --success-soft: #e6f1e7;
   --danger: #bd4b3e;
-  --warning: #f59e0b;
+  --danger-soft: #f7e1dc;
+  --warning: #b7791f;
+  --warning-soft: #fff0cf;
 
+  /* Radii */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
+  --radius-pill: 999px;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(23, 50, 77, 0.06);
+  --shadow-md: 0 8px 24px rgba(23, 50, 77, 0.08);
+  --shadow-lg: 0 18px 48px rgba(23, 50, 77, 0.14);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
 }
